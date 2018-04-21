@@ -4,7 +4,7 @@ const resolve = require('path').resolve
 const webpack = {
   config: {
     resolve: {
-      extensions: ['.js', '.vue'],
+      extensions: ['.js', '.vue', '.ts'],
       alias: {
         '~': resolve(__dirname, nuxt.srcDir || ''),
         '~~': __dirname,
@@ -12,7 +12,7 @@ const webpack = {
         '@': resolve(__dirname, nuxt.srcDir || ''),
         '@@': __dirname,
       }
-    },
+    }
   }
 }
 
@@ -41,10 +41,25 @@ module.exports = {
     'vue/max-attributes-per-line': "off",
 
     "space-before-function-paren": ["error", "never"],
-    "semi": ["error", "always"],
+    // "semi": ["error", "always"],
 
+    "no-console": "off",
     'import/no-unresolved': ['error', { commonjs: true, caseSensitive: true }],
-    'import/extensions': ['error', 'never'],
+
+    'no-var': 'error',
+    'template-curly-spacing': 'error',
+    'prefer-template': 'error',
+    'prefer-const': ['error', {
+      destructuring: 'any',
+      ignoreReadBeforeAssign: true,
+    }],
+    // 'comma-dangle': ['error', {
+    //   arrays: 'always-multiline',
+    //   objects: 'always-multiline',
+    //   imports: 'always-multiline',
+    //   exports: 'always-multiline',
+    //   functions: 'always-multiline',
+    // }],
   },
 
   settings: {

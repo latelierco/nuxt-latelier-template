@@ -6,7 +6,7 @@
         nuxt
       </h1>
       <h2 class="subtitle">
-        My awe-inspiring Nuxt.js project
+        My awe-inspiring Nuxt.js project {{ getValue() }}
       </h2>
       <div class="links">
         <a href="https://nuxtjs.org/" target="_blank" class="button--green">Documentation</a>
@@ -17,8 +17,10 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
-import Logo from '~/components/Logo.vue';
+import Vue from 'vue'
+import Logo from '~/components/Logo.vue'
+
+import test from './test'
 
 export default Vue.extend({
   components: {
@@ -27,16 +29,16 @@ export default Vue.extend({
 
   data() {
     return {
-      quiet: false
-    };
+      quiet: 2
+    }
   },
 
   methods: {
-    getValue(value: string): string {
-      return this.quiet + value;
+    getValue(value): string {
+      return test.test(value)
     }
   }
-});
+})
 </script>
 
 <style>
@@ -50,8 +52,7 @@ export default Vue.extend({
 }
 .title
 {
-  font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont\
-    "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* 1 */
+  font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* 1 */
 
   display: block;
   font-weight: 300;
