@@ -17,6 +17,11 @@ module.exports = function module(moduleOptions) {
     options.id = analyticsId;
   }
 
+  if (!options.id) {
+    console.warn('[Analytics] `ANALYTICS_ID` not defined');
+    return;
+  }
+
   this.addPlugin({
     src: resolve(__dirname, './templates/plugin.js'),
     fileName: 'google-analytics.js',

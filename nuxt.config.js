@@ -15,10 +15,10 @@ module.exports = {
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: pkg.description }
+    ],
+    link: [
+      { rel: 'icon', type: 'image/png', size: '512x512', href: '/icon.png' }
     ]
-    // link: [
-    //   { rel: 'icon', type: 'image/png', size: '32x32', href: '/favicon-32x32.png' }
-    // ]
   },
 
   /* Customize the progress-bar color */
@@ -32,8 +32,8 @@ module.exports = {
 
   /* Nuxt.js modules */
   modules: [
-    '@nuxtjs/axios', // Doc: https://github.com/nuxt-community/axios-module#usage
-    '@nuxtjs/pwa',
+    '@nuxtjs/axios', // Doc: https://github.com/nuxt-community/axios-module
+    '@nuxtjs/pwa', // Doc: https://github.com/nuxt-community/pwa-module
 
     '~/modules/typescript.ts',
 
@@ -47,6 +47,7 @@ module.exports = {
     instrumentationKey: process.env.INSTRUMENTATION_KEY // For application insights
   },
 
+  /* Extend option for vue-analytics, see https://matteogabriele.gitbooks.io/vue-analytics/content */
   'google-analytics': {},
 
   generate: {

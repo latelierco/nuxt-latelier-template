@@ -11,6 +11,11 @@ module.exports = function module(moduleOptions) {
     options.id = instrumentationKey;
   }
 
+  if (!options.id) {
+    console.warn('[App-Insights] `INSTRUMENTATION_KEY` not defined');
+    return;
+  }
+
   this.addPlugin({
     src: resolve(__dirname, './templates/plugin.js'),
     fileName: 'application-insights.js',
