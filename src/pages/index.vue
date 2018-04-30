@@ -3,7 +3,7 @@
     <div>
       <logo/>
       <h1 class="title">
-        nuxt
+        L'Atelier 3
       </h1>
       <h2 class="subtitle">
         My awe-inspiring Nuxt.js project {{ getValue() }}

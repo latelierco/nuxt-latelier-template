@@ -7,11 +7,9 @@ module.exports = function() {
       loader: 'ts-loader',
       options: {
         appendTsSuffixTo: [/\.vue$/]
-      },
-      exclude: [
-        /\.nuxt/
-      ]
+      }
     }
+
     // Add TypeScript loader
     config.module.rules.push(
       Object.assign(

@@ -32,13 +32,21 @@ module.exports = {
 
   /* Nuxt.js modules */
   modules: [
-    // Doc: https://github.com/nuxt-community/axios-module#usage
-    '@nuxtjs/axios',
-    '~/modules/typescript'
+    '@nuxtjs/axios', // Doc: https://github.com/nuxt-community/axios-module#usage
+
+    '~/modules/typescript.ts'
   ],
+
+  generate: {
+    fallback: false
+  },
 
   /* Build configuration */
   build: {
+
+    filenames: {
+      chunk: '[id].[chunkhash].js'
+    },
 
     extend: (config, ctx) => {
       // Run ESLint on save
