@@ -10,7 +10,7 @@ module.exports = {
 
   /* Headers of the page */
   head: {
-    title: 'salut',
+    title: pkg.name,
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -34,8 +34,19 @@ module.exports = {
   modules: [
     '@nuxtjs/axios', // Doc: https://github.com/nuxt-community/axios-module#usage
 
-    '~/modules/typescript.ts'
+    '~/modules/typescript.ts',
+
+    /* Monitoring */
+    '~/modules/analytics',
+    '~/modules/app-insights'
   ],
+
+  env: {
+    analyticsId: process.env.ANALYTICS_ID, // For google analytics
+    instrumentationKey: process.env.INSTRUMENTATION_KEY // For application insights
+  },
+
+  'google-analytics': {},
 
   generate: {
     fallback: false
