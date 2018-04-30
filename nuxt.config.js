@@ -1,4 +1,5 @@
 const pkg = require('./package.json');
+const path = require('path');
 
 module.exports = {
   mode: 'spa',
@@ -32,8 +33,8 @@ module.exports = {
 
   /* Nuxt.js modules */
   modules: [
-    '@nuxtjs/axios', // Doc: https://github.com/nuxt-community/axios-module
-    '@nuxtjs/pwa', // Doc: https://github.com/nuxt-community/pwa-module
+    '@nuxtjs/axios', // Doc: https://axios.nuxtjs.org/
+    '@nuxtjs/pwa', // Doc: https://pwa.nuxtjs.org/
 
     '~/modules/typescript.ts',
 
@@ -73,5 +74,14 @@ module.exports = {
       }
     }
 
+  },
+
+  workbox: {
+    swDest: path.resolve(__dirname, 'static', 'sw.js')
+  },
+
+  icon: {
+    iconSrc: path.resolve(__dirname, 'static', 'icon.png')
   }
+
 };
