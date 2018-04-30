@@ -1,5 +1,5 @@
 export default {
   test: (val): string => {
-    return 'test'
+    return 'test';
   }
-}
+};

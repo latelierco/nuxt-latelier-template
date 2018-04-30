@@ -41,7 +41,7 @@ module.exports = {
     'vue/max-attributes-per-line': "off",
 
     "space-before-function-paren": ["error", "never"],
-    // "semi": ["error", "always"],
+    "semi": ["error", "always"],
 
     "no-console": "off",
     'import/no-unresolved': ['error', { commonjs: true, caseSensitive: true }],

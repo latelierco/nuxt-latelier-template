@@ -17,10 +17,10 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue'
-import Logo from '~/components/Logo.vue'
+import Vue from 'vue';
+import Logo from '~/components/Logo.vue';
 
-import test from './test'
+import test from './test';
 
 export default Vue.extend({
   components: {
@@ -30,15 +30,15 @@ export default Vue.extend({
   data() {
     return {
       quiet: 2
-    }
+    };
   },
 
   methods: {
     getValue(value): string {
-      return test.test(value)
+      return test.test(value);
     }
   }
-})
+});
 </script>
 
 <style>

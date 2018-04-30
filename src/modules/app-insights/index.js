@@ -1,14 +1,14 @@
-const { resolve } = require('path')
+const { resolve } = require('path');
 
 module.exports = function module(moduleOptions) {
-  const options = this.options['app-insights'] || moduleOptions
+  const options = this.options['app-insights'] || moduleOptions;
 
-  if (this.options.dev) return
+  if (this.options.dev) return;
 
-  const { instrumentationKey } = this.options.env
+  const { instrumentationKey } = this.options.env;
 
   if (instrumentationKey) {
-    options.id = instrumentationKey
+    options.id = instrumentationKey;
   }
 
   this.addPlugin({
@@ -16,5 +16,5 @@ module.exports = function module(moduleOptions) {
     fileName: 'application-insights.js',
     options,
     ssr: false
-  })
-}
+  });
+};

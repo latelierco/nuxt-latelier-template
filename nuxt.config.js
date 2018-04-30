@@ -1,4 +1,4 @@
-const pkg = require('./package.json')
+const pkg = require('./package.json');
 
 module.exports = {
   mode: 'spa',
@@ -15,10 +15,10 @@ module.exports = {
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: pkg.description }
-    ],
-    link: [
-      { rel: 'icon', type: 'image/png', size: '32x32', href: '/favicon-32x32.png' }
     ]
+    // link: [
+    //   { rel: 'icon', type: 'image/png', size: '32x32', href: '/favicon-32x32.png' }
+    // ]
   },
 
   /* Customize the progress-bar color */
@@ -33,6 +33,7 @@ module.exports = {
   /* Nuxt.js modules */
   modules: [
     '@nuxtjs/axios', // Doc: https://github.com/nuxt-community/axios-module#usage
+    '@nuxtjs/pwa',
 
     '~/modules/typescript.ts',
 
@@ -67,9 +68,9 @@ module.exports = {
           test: /\.(js|vue|ts)$/,
           loader: 'eslint-loader',
           exclude: /(node_modules)/
-        })
+        });
       }
     }
 
   }
-}
+};
