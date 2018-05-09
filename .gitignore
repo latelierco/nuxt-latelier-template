@@ -12,3 +12,5 @@ dist
 
 # workbox
 static/sw.*
+
+.npmrc

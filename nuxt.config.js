@@ -26,15 +26,20 @@ module.exports = {
   loading: { color: '#FFFFFF' },
 
   /* Global CSS */
-  css: [],
+  css: [
+    '~/styles/theme.scss'
+  ],
 
   /* Plugins to load before mounting the App */
-  plugins: [],
+  plugins: [
+    '~/plugins/bootstrap.ts' // For register all global directives, filters or components.
+  ],
 
   /* Nuxt.js modules */
   modules: [
     '@nuxtjs/axios', // Doc: https://axios.nuxtjs.org/
     '@nuxtjs/pwa', // Doc: https://pwa.nuxtjs.org/
+    'qonfucius-nuxt-fontawesome', // Doc: https://github.com/Qonfucius/nuxt-fontawesome/
 
     '~/modules/typescript.ts',
 
@@ -50,6 +55,16 @@ module.exports = {
 
   /* Extend option for vue-analytics, see https://matteogabriele.gitbooks.io/vue-analytics/content */
   'google-analytics': {},
+
+  'fontAwesome': {
+    componentName: 'icon',
+    packs: [
+      // { package: '@fortawesome/fontawesome-pro-solid' },
+      // { package: '@fortawesome/fontawesome-pro-regular' },
+      // { package: '@fortawesome/fontawesome-pro-light' },
+      // { package: '@fortawesome/fontawesome-free-brands' }
+    ]
+  },
 
   generate: {
     fallback: false
