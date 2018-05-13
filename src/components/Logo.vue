@@ -14,7 +14,7 @@ export default Vue.extend({
 });
 </script>
 
-<style>
+<style lang="scss" scoped>
 .VueToNuxtLogo
 {
   display: inline-block;

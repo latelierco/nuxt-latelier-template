@@ -3,10 +3,10 @@
     <div>
       <logo/>
       <h1 class="title">
-        L'Atelier 3
+        L'Atelier
       </h1>
       <h2 class="subtitle">
-        My awe-inspiring Nuxt.js project {{ getValue() }}
+        My awe-inspiring Nuxt.js project
       </h2>
       <div class="links">
         <a href="https://nuxtjs.org/" target="_blank" class="button--green">Documentation</a>
@@ -20,8 +20,6 @@
 import Vue from 'vue';
 import Logo from '~/components/Logo.vue';
 
-import test from './test';
-
 export default Vue.extend({
   components: {
     Logo
@@ -31,17 +29,12 @@ export default Vue.extend({
     return {
       quiet: 2
     };
-  },
-
-  methods: {
-    getValue(value): string {
-      return test.test(value);
-    }
   }
+
 });
 </script>
 
-<style>
+<style lang="scss" scoped>
 .container
 {
   min-height: 100vh;

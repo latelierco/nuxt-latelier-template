@@ -1,5 +1,5 @@
 const pkg = require('./package.json');
-const path = require('path');
+const { resolve } = require('path');
 
 module.exports = {
   mode: 'spa',
@@ -87,16 +87,38 @@ module.exports = {
           exclude: /(node_modules)/
         });
       }
+
+      // Load gloabll scss variable
+      const isVueRule = rule =>
+        rule.test.toString() === '/\\.vue$/';
+      const isSASSRule = rule =>
+        ['/\\.sass$/', '/\\.scss$/'].indexOf(rule.test.toString()) !== -1;
+
+      const scssLoader = {
+        loader: 'sass-resources-loader',
+        options: {
+          resources: resolve(__dirname, 'src/styles/theme.scss')
+        }
+      };
+
+      config.module.rules.forEach((rule) => {
+        if (isVueRule(rule)) {
+          rule.options.loaders.scss.push(scssLoader);
+        }
+        if (isSASSRule(rule)) {
+          rule.use.push(scssLoader);
+        }
+      });
     }
 
   },
 
   workbox: {
-    swDest: path.resolve(__dirname, 'static', 'sw.js')
+    swDest: resolve(__dirname, 'static', 'sw.js')
   },
 
   icon: {
-    iconSrc: path.resolve(__dirname, 'static', 'icon.png')
+    iconSrc: resolve(__dirname, 'static', 'icon.png')
   }
 
 };
