@@ -2,7 +2,6 @@ import Vue from 'vue';
 import Vuex, { Store } from 'vuex';
 
 import { RootState } from './types';
-import { profile } from './_template/index';
 
 const debug: boolean = process.env.NODE_ENV !== 'production';
 
@@ -12,10 +11,7 @@ const createStore = () => {
       version: '1.0.0'
     },
 
-    modules: {
-      profile
-    },
-
+    modules: {},
     strict: debug
   });
 };
