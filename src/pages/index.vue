@@ -1,12 +1,18 @@
 <template>
   <section class="container">
+
+    <div class="locale-selection">
+      <nuxt-link :to="switchLocalePath('en')" class="link">English</nuxt-link>
+      <nuxt-link :to="switchLocalePath('fr')" class="link">Français</nuxt-link>
+    </div>
+
     <div class="content">
       <logo/>
       <h1 class="title">
-        L'Atelier
+        {{ $t('home.title') }}
       </h1>
       <h2 class="subtitle">
-        Turning good ideas into great products
+        {{ $t('home.description') }}
       </h2>
     </div>
   </section>
@@ -19,7 +25,12 @@ import Logo from '~/components/Logo.vue';
 export default Vue.extend({
   components: {
     Logo
+  },
+
+  created() {
+    console.log('test');
   }
+
 });
 </script>
 
@@ -31,6 +42,15 @@ export default Vue.extend({
   justify-content: center;
   align-items: center;
   text-align: center;
+}
+
+.locale-selection {
+  position: absolute;
+  top: 24px;
+
+  .link {
+    padding: 0 8px;
+  }
 }
 
 .content {

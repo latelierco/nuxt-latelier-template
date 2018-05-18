@@ -25,11 +25,6 @@ module.exports = {
   /* Customize the progress-bar color */
   loading: { color: '#FFFFFF' },
 
-  /* Global CSS */
-  css: [
-    '~/styles/theme.scss'
-  ],
-
   /* Plugins to load before mounting the App */
   plugins: [
     '~/plugins/bootstrap.ts' // For register all global directives, filters or components.
@@ -41,6 +36,23 @@ module.exports = {
     '@nuxtjs/pwa', // Doc: https://pwa.nuxtjs.org/
     'qonfucius-nuxt-fontawesome', // Doc: https://github.com/Qonfucius/nuxt-fontawesome/
 
+    ['nuxt-i18n', {
+      locales: [
+        { code: 'en', iso: 'en-US', file: 'en.json' },
+        { code: 'fr', iso: 'fr-FR', file: 'fr.json' }
+      ],
+      defaultLocale: 'en',
+      vueI18n: {
+        fallbackLocale: 'en',
+        messages: {
+          en: require('./locales/en.json') // Only require for default locale.
+        }
+      },
+
+      lazy: true,
+      langDir: '../locales/'
+    }],
+
     '~/modules/typescript.ts',
 
     /* Monitoring */
@@ -50,6 +62,7 @@ module.exports = {
 
   env: {
     analyticsId: process.env.ANALYTICS_ID, // For google analytics
+
     instrumentationKey: process.env.INSTRUMENTATION_KEY // For application insights
   },
 
