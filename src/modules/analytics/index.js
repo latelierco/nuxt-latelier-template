@@ -23,7 +23,7 @@ module.exports = function module(moduleOptions) {
   }
 
   this.addPlugin({
-    src: resolve(__dirname, './templates/plugin.js'),
+    src: resolve(__dirname, './plugin.templates.js'),
     fileName: 'google-analytics.js',
     options,
     ssr: false

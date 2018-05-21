@@ -1,5 +1,6 @@
 const pkg = require('./package.json');
 const { resolve } = require('path');
+const localForage = require('localforage');
 
 module.exports = {
   mode: 'spa',
@@ -38,9 +39,20 @@ module.exports = {
 
     ['nuxt-i18n', {
       locales: [
-        { code: 'en', iso: 'en-US', file: 'en.json' },
-        { code: 'fr', iso: 'fr-FR', file: 'fr.json' }
+        {
+          code: 'en',
+          iso: 'en-US',
+          file: 'en.json',
+          name: 'English'
+        },
+        {
+          code: 'fr',
+          iso: 'fr-FR',
+          file: 'fr.json',
+          name: 'Francais'
+        }
       ],
+
       defaultLocale: 'en',
       vueI18n: {
         fallbackLocale: 'en',
@@ -53,12 +65,18 @@ module.exports = {
       langDir: '../locales/'
     }],
 
+    '~/modules/storage',
     '~/modules/typescript.ts',
 
     /* Monitoring */
     '~/modules/analytics',
     '~/modules/app-insights'
   ],
+
+  localforage: {
+    driver: localForage.LOCALSTORAGE,
+    name: pkg.name
+  },
 
   env: {
     analyticsId: process.env.ANALYTICS_ID, // For google analytics

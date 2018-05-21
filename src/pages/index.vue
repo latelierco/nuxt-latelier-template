@@ -27,8 +27,12 @@ export default Vue.extend({
     Logo
   },
 
-  created() {
-    console.log('test');
+  async created() {
+    await this.$storage.setItem('key', {
+      test: 'salut'
+    });
+
+    console.log(await this.$storage.getItem('key'));
   }
 
 });

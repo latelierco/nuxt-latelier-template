@@ -17,7 +17,7 @@ module.exports = function module(moduleOptions) {
   }
 
   this.addPlugin({
-    src: resolve(__dirname, './templates/plugin.js'),
+    src: resolve(__dirname, './plugin.templates.js'),
     fileName: 'application-insights.js',
     options,
     ssr: false
