@@ -1,0 +1,4 @@
+
+interface DefaultOptions {
+  strategies: any
+}

@@ -27,12 +27,26 @@ export default Vue.extend({
     Logo
   },
 
-  async created() {
-    await this.$storage.setItem('key', {
-      test: 'salut'
-    });
+  props: {
+    test: {
+      type: Object
+    }
+  },
 
-    console.log(await this.$storage.getItem('key'));
+  data() {
+    return {
+      t: this.test
+    };
+  },
+
+  async created() {
+    this.$store.dispatch('asd');
+  },
+
+  methods: {
+    truc() {
+      return this.test;
+    }
   }
 
 });

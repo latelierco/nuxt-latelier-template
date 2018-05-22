@@ -10,9 +10,9 @@
     "experimentalDecorators": true,
 
     "noImplicitAny": false,
-    "noImplicitThis": false,
+    "noImplicitThis": true,
     "strictNullChecks": true,
-    "removeComments": true,
+    // "removeComments": true,
     "suppressImplicitAnyIndexErrors": true,
     "allowSyntheticDefaultImports": true,
 
