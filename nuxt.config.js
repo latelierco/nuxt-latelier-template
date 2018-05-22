@@ -68,7 +68,7 @@ module.exports = {
     '~/modules/storage',
     // '~/modules/auth/module/index.ts',
 
-    '~/modules/typescript.ts',
+    '~/modules/typescript',
 
     /* Monitoring */
     '~/modules/analytics',

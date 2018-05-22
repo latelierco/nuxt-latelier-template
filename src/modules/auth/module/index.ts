@@ -6,6 +6,7 @@ const { existsSync, readdirSync } = require('fs');
 const root = resolve(__dirname, '..');
 
 module.exports = function(moduleOptions) {
+  // @ts-ignore
   const options = Object.assign({}, moduleOptions, this.options.auth);
 
   const strategies = [];
@@ -31,23 +32,27 @@ module.exports = function(moduleOptions) {
 
     console.log(schemeName);
 
+    // @ts-ignore
     this.addTemplate({
       src: schemeSrc,
       fileName: join('auth', 'schemes', schemeName)
     });
 
     strategyScheme.set(strategy, `.${join('/', 'schemes', basename(schemeSrc))}`);
+    // @ts-ignore
     strategies.push(strategy);
   }
 
   const coreRoot = resolve(root, 'core');
   for (const file of readdirSync(coreRoot)) {
+    // @ts-ignore
     this.addTemplate({
       src: resolve(coreRoot, file),
       fileName: join('auth', file)
     });
   }
 
+  // @ts-ignore
   this.addPlugin({
     src: resolve(root, 'module', 'plugin.ts'),
     fileName: join('auth', 'plugin.ts'),
@@ -69,6 +74,7 @@ function resolveScheme(scheme) {
   }
 
   try {
+    // @ts-ignore
     path = this.nuxt.resolvePath(scheme);
   } catch (e) {
     // Ignore
