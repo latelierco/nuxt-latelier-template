@@ -40,13 +40,7 @@ export default Vue.extend({
   },
 
   async created() {
-    this.$store.dispatch('asd');
-  },
-
-  methods: {
-    truc() {
-      return this.test;
-    }
+    this.$store.dispatch('test');
   }
 
 });
