@@ -8,7 +8,7 @@ import clickout from './directives/clickoutside';
 export default ({ isDev, app }, inject) => {
   const isProd = !isDev;
 
-  if (!isProd) {
+  if (isProd) {
     const variables = [
       { name: 'Build Id', env: process.env.BUILD_BUILDNUMBER },
       { name: 'Source Branch', env: process.env.BUILD_SOURCEBRANCHNAME },
