@@ -8,7 +8,7 @@ import clickout from './directives/clickoutside';
 export default ({ isDev, app }, inject) => {
   const isProd = !isDev;
 
-  if (isProd) {
+  if (!isProd) {
     const variables = [
       { name: 'Build Id', env: process.env.BUILD_BUILDNUMBER },
       { name: 'Source Branch', env: process.env.BUILD_SOURCEBRANCHNAME },
@@ -23,7 +23,7 @@ export default ({ isDev, app }, inject) => {
       maxLength = length;
     });
 
-    console.info(`%c +-------------------------+`, 'color: #bada55; font-size: 14px;');
+    console.info(`%c +------------------------------+`, 'color: gray; font-size: 12x;');
     for (const variable of variables) {
       const margin = maxLength - variable.name.length;
       console.info(
@@ -31,7 +31,7 @@ export default ({ isDev, app }, inject) => {
         'color: white; font-size: 12px', 'font-size: 12px;'
       );
     }
-    console.info(`%c +-------------------------+`, 'color: #bada55; font-size: 14px;');
+    console.info(`%c +------------------------------+`, 'color: gray; font-size: 12;');
   }
 
   /*
