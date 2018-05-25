@@ -5,3 +5,9 @@ declare module 'vue/types/vue' {
     $storage: LocalForageDbMethodsCore;
   }
 }
+
+declare module 'vuex' {
+  interface Store<S> {
+    $storage: LocalForageDbMethodsCore
+  }
+}

@@ -1,7 +1,8 @@
-import Vue, { ComponentOptions } from 'vue';
+import Vue from 'vue';
 import { MetaInfo } from 'vue-meta';
-import { Route } from 'vue-router';
-import { Store } from 'vuex';
+import VueRouter, { Route } from 'vue-router';
+import { ActionContext, Store } from 'vuex';
+import { AxiosInstance } from 'axios';
 
 type Dictionary<T> = { [key: string]: T };
 
@@ -39,6 +40,10 @@ export type TransitionObject = {
     leaveActiveClass?: string
 };
 
+type ActionHandler<S, R> = (this: Store<S>, injectee: ActionContext<S, R>, payload: any) => any;
+
+type Mutation<S> = (this: Store<S>, state: S, payload: any) => any;
+
 declare module 'vue/types/options' {
     interface ComponentOptions<V extends Vue> {
         head?: MetaInfo | (() => MetaInfo);
@@ -62,4 +67,18 @@ declare module 'vue/types/vue' {
     interface Vue {
         head?: MetaInfo | (() => MetaInfo);
     }
+}
+
+declare module 'vuex' {
+
+  interface Store<S> {
+    $router: VueRouter
+  }
+  interface ActionTreeContext<S, R> {
+    [key: string]: (this: Store<S>, injectee: ActionContext<S, R>, payload: any) => any;
+  }
+
+  interface MutationTreeContext<S> {
+    [key: string]: (this: Store<S>, state: S, payload: any) => any;
+  }
 }

@@ -39,8 +39,10 @@ export default Vue.extend({
     };
   },
 
-  async created() {
+  created() {
+    console.log(this.$store);
     this.$store.dispatch('test');
+    console.log(this.$store.getters.test);
   }
 
 });
