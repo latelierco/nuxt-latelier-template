@@ -3,7 +3,7 @@
     "tslint.enable": false,
 
     "files.exclude": {
-      ".nuxt/": true,
-      "node_modules/": false
+      ".nuxt": false,
+      "node_modules": false
     }
   }

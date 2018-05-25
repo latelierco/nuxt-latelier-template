@@ -99,7 +99,12 @@ module.exports = {
   env: {
     analyticsId: process.env.ANALYTICS_ID, // For google analytics
 
-    instrumentationKey: process.env.INSTRUMENTATION_KEY // For application insights
+    instrumentationKey: process.env.INSTRUMENTATION_KEY, // For application insights
+
+    // VSTS build variables.
+    BUILD_BUILDNUMBER: process.env.BUILD_BUILDNUMBER,
+    BUILD_SOURCEBRANCHNAME: process.env.BUILD_SOURCEBRANCHNAME,
+    BUILD_SOURCEVERSION: process.env.BUILD_SOURCEVERSION
   },
 
   /* Extend option for vue-analytics, see https://matteogabriele.gitbooks.io/vue-analytics/content */

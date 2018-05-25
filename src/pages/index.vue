@@ -37,12 +37,6 @@ export default Vue.extend({
     return {
       t: this.test
     };
-  },
-
-  created() {
-    console.log(this.$store);
-    this.$store.dispatch('test');
-    console.log(this.$store.getters.test);
   }
 
 });
