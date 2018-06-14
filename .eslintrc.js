@@ -54,7 +54,9 @@ module.exports = {
       ignoreReadBeforeAssign: true,
     }],
 
+
     // For typescript
+    'space-infix-ops': 'off',
     'no-unused-vars': 'off',
     'no-undef': 'off'
   },

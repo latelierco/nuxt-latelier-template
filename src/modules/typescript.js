@@ -1,3 +1,5 @@
+const t = require('nuxt');
+
 module.exports = function() {
   // Add .ts extension for store, middleware and more
   this.nuxt.options.extensions.push('ts');
