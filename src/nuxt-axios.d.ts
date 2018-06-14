@@ -21,13 +21,13 @@ declare module 'axios' {
     onResponseError: CallbackFunction<AxiosError, any>
     onError: CallbackFunction<AxiosError, any>
 
-    $request<T = any>(config: AxiosRequestConfig): AxiosPromise<T>;
-    $get<T = any>(url: string, config?: AxiosRequestConfig): AxiosPromise<T>;
-    $delete(url: string, config?: AxiosRequestConfig): AxiosPromise;
-    $head(url: string, config?: AxiosRequestConfig): AxiosPromise;
-    $post<T = any>(url: string, data?: any, config?: AxiosRequestConfig): AxiosPromise<T>;
-    $put<T = any>(url: string, data?: any, config?: AxiosRequestConfig): AxiosPromise<T>;
-    $patch<T = any>(url: string, data?: any, config?: AxiosRequestConfig): AxiosPromise<T>;
+    $request(config: AxiosRequestConfig): Promise<any>;
+    $get(url: string, config?: AxiosRequestConfig): Promise<any>;
+    $delete(url: string, config?: AxiosRequestConfig): Promise<any>;
+    $head(url: string, config?: AxiosRequestConfig): Promise<any>;
+    $post(url: string, data?: any, config?: AxiosRequestConfig): Promise<any>;
+    $put(url: string, data?: any, config?: AxiosRequestConfig): Promise<any>;
+    $patch(url: string, data?: any, config?: AxiosRequestConfig): Promise<any>;
   }
 }
 
