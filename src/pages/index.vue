@@ -25,20 +25,7 @@ import Logo from '~/components/Logo.vue';
 export default Vue.extend({
   components: {
     Logo
-  },
-
-  props: {
-    test: {
-      type: Object
-    }
-  },
-
-  data() {
-    return {
-      t: this.test
-    };
   }
-
 });
 </script>
 
