@@ -1,5 +1,6 @@
 import axios from 'axios';
-import { ActionTree } from 'vuex';
+import { ActionTreeContext as ActionTree } from 'vuex';
+import Vue from 'vue';
 
 import { State } from './types';
 import { RootState } from '../types';

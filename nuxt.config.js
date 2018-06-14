@@ -66,12 +66,33 @@ module.exports = {
     }],
 
     '~/modules/storage',
-    '~/modules/typescript.ts',
+    '~/modules/typescript',
 
     /* Monitoring */
     '~/modules/analytics',
     '~/modules/app-insights'
   ],
+
+  axios: {
+
+  },
+
+  // auth: {
+  //   strategies: {
+  //     local: {
+  //       endpoints: {
+  //         login: { url: '/api/auth/login', method: 'post', propertyName: 'token' },
+  //         logout: { url: '/api/auth/logout', method: 'post' },
+  //         user: { url: '/api/auth/user', method: 'get', propertyName: 'user' }
+  //       }
+  //     },
+  //     facebook: {
+  //       client_id: '1671464192946675',
+  //       userinfo_endpoint: 'https://graph.facebook.com/v2.12/me?fields=about,name,picture{url},email,birthday',
+  //       scope: ['public_profile', 'email', 'user_birthday']
+  //     }
+  //   }
+  // },
 
   localforage: {
     driver: localForage.LOCALSTORAGE,
@@ -81,7 +102,12 @@ module.exports = {
   env: {
     analyticsId: process.env.ANALYTICS_ID, // For google analytics
 
-    instrumentationKey: process.env.INSTRUMENTATION_KEY // For application insights
+    instrumentationKey: process.env.INSTRUMENTATION_KEY, // For application insights
+
+    // VSTS build variables.
+    BUILD_BUILDNUMBER: process.env.BUILD_BUILDNUMBER,
+    BUILD_SOURCEBRANCHNAME: process.env.BUILD_SOURCEBRANCHNAME,
+    BUILD_SOURCEVERSION: process.env.BUILD_SOURCEVERSION
   },
 
   /* Extend option for vue-analytics, see https://matteogabriele.gitbooks.io/vue-analytics/content */

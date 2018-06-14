@@ -12,7 +12,7 @@ export const state: State = {
 
 };
 
-const namespaced: boolean = true;
+const namespaced: boolean = false;
 
 export const moduleName: Module<State, RootState> = {
   namespaced,

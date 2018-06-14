@@ -4,10 +4,12 @@ import localForage from 'localforage'
 const nuxtLocalForage = {
   install(Vue, options) {
     localForage.config(options)
-    Vue.prototype.$storage = localForage;
   }
 }
 
-export default async _ => {
+export default async (ctx, inject) => {
   Vue.use(nuxtLocalForage, <%= serialize(options) %>)
+
+  ctx.$storage = localForage
+  inject('storage', localForage)
 }

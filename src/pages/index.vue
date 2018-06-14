@@ -25,16 +25,7 @@ import Logo from '~/components/Logo.vue';
 export default Vue.extend({
   components: {
     Logo
-  },
-
-  async created() {
-    await this.$storage.setItem('key', {
-      test: 'salut'
-    });
-
-    console.log(await this.$storage.getItem('key'));
   }
-
 });
 </script>
 

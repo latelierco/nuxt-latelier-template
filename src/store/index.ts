@@ -5,6 +5,8 @@ import Vuex, { Store } from 'vuex';
 
 import { RootState } from './types';
 
+import { moduleName as test } from './_template/index';
+
 const debug: boolean = process.env.NODE_ENV !== 'production';
 
 const createStore = () => {
@@ -13,7 +15,9 @@ const createStore = () => {
       version: '1.0.0'
     },
 
-    modules: {},
+    modules: {
+      test
+    },
     strict: debug
   });
 };
