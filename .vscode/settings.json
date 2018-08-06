@@ -2,7 +2,7 @@
     "eslint.enable": true,
 
     "files.exclude": {
-      ".nuxt": false,
-      "node_modules": false
+      ".nuxt": true,
+      "node_modules": true
     }
   }
