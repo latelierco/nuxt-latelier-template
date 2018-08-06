@@ -72,15 +72,19 @@ module.exports = {
     '~/modules/app-insights'
   ],
 
+  axios: {
+    // baseURL: 'baseUrl'
+  },
+
   localforage: {
     driver: localForage.LOCALSTORAGE,
     name: pkg.name
   },
 
   env: {
-    analyticsId: process.env.ANALYTICS_ID, // For google analytics
+    analyticsId: process.env.PROJECT_ANALYTICSID, // For google analytics
 
-    instrumentationKey: process.env.INSTRUMENTATION_KEY, // For application insights
+    instrumentationKey: process.env.PROJECT_INSTRUMENTATIONKEY, // For application insights
 
     // VSTS build variables.
     BUILD_BUILDNUMBER: process.env.BUILD_BUILDNUMBER,
@@ -104,6 +108,10 @@ module.exports = {
   generate: {
     fallback: false
   },
+
+  css: [
+    { src: '~/styles/theme.scss', lang: 'scss' }
+  ],
 
   /* Build configuration */
   build: {
@@ -132,7 +140,7 @@ module.exports = {
       const scssLoader = {
         loader: 'sass-resources-loader',
         options: {
-          resources: resolve(__dirname, 'src/styles/theme.scss')
+          resources: resolve(__dirname, 'src/styles/_variables.scss')
         }
       };
 
