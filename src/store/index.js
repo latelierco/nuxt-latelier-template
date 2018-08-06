@@ -2,7 +2,7 @@
 
 import { Store } from 'vuex';
 
-import { moduleName as test } from './_template/index';
+import { moduleName as test } from './_template';
 
 const debug = process.env.NODE_ENV !== 'production';
 

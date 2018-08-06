@@ -28,7 +28,7 @@ module.exports = {
 
   /* Plugins to load before mounting the App */
   plugins: [
-    '~/plugins/bootstrap.ts' // For register all global directives, filters or components.
+    '~/plugins/bootstrap.js' // For register all global directives, filters or components.
   ],
 
   /* Nuxt.js modules */
