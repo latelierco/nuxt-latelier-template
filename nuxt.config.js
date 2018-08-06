@@ -66,7 +66,6 @@ module.exports = {
     }],
 
     '~/modules/storage',
-    '~/modules/typescript',
 
     /* Monitoring */
     '~/modules/analytics',
@@ -74,7 +73,7 @@ module.exports = {
   ],
 
   axios: {
-    baseURL: process.env.PROJECT_APIURL
+    // baseURL: 'baseUrl'
   },
 
   localforage: {
@@ -126,7 +125,7 @@ module.exports = {
       if (ctx.isDev && ctx.isClient) {
         config.module.rules.push({
           enforce: 'pre',
-          test: /\.(js|vue|ts)$/,
+          test: /\.(js|vue)$/,
           loader: 'eslint-loader',
           exclude: /(node_modules)/
         });

@@ -1,16 +1,13 @@
 // Example: https://codeburst.io/vuex-and-typescript-3427ba78cfa8
 
-import Vue from 'vue';
-import Vuex, { Store } from 'vuex';
-
-import { RootState } from './types';
+import { Store } from 'vuex';
 
 import { moduleName as test } from './_template/index';
 
-const debug: boolean = process.env.NODE_ENV !== 'production';
+const debug = process.env.NODE_ENV !== 'production';
 
 const createStore = () => {
-  return new Store<RootState>({
+  return new Store({
     state: {
       version: '1.0.0'
     },
