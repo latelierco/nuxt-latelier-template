@@ -1,13 +1,14 @@
 import Vue from 'vue';
+import LocalForage from 'localforage';
 
 declare module 'vue/types/vue' {
   interface Vue {
-    $storage: LocalForageDbMethodsCore;
+    $storage: LocalForage;
   }
 }
 
 declare module 'vuex' {
   interface Store<S> {
-    $storage: LocalForageDbMethodsCore
+    $storage: LocalForage
   }
 }
