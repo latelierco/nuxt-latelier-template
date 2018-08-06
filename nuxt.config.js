@@ -66,33 +66,11 @@ module.exports = {
     }],
 
     '~/modules/storage',
-    '~/modules/typescript',
 
     /* Monitoring */
     '~/modules/analytics',
     '~/modules/app-insights'
   ],
-
-  axios: {
-
-  },
-
-  // auth: {
-  //   strategies: {
-  //     local: {
-  //       endpoints: {
-  //         login: { url: '/api/auth/login', method: 'post', propertyName: 'token' },
-  //         logout: { url: '/api/auth/logout', method: 'post' },
-  //         user: { url: '/api/auth/user', method: 'get', propertyName: 'user' }
-  //       }
-  //     },
-  //     facebook: {
-  //       client_id: '1671464192946675',
-  //       userinfo_endpoint: 'https://graph.facebook.com/v2.12/me?fields=about,name,picture{url},email,birthday',
-  //       scope: ['public_profile', 'email', 'user_birthday']
-  //     }
-  //   }
-  // },
 
   localforage: {
     driver: localForage.LOCALSTORAGE,
@@ -139,7 +117,7 @@ module.exports = {
       if (ctx.isDev && ctx.isClient) {
         config.module.rules.push({
           enforce: 'pre',
-          test: /\.(js|vue|ts)$/,
+          test: /\.(js|vue)$/,
           loader: 'eslint-loader',
           exclude: /(node_modules)/
         });
